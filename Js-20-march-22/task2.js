@@ -29,4 +29,4 @@ switch (day) {
         console.log("enter a valid value");
 
 }
-console.log(result);
+document.write(result);

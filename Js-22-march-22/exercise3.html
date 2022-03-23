@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <select id="country" onchange="changeimg(this.options[this.selectedIndex].value)">
+        <option>Select: </option>
+        <option value="Jordan">Jordan</option>
+        <option  >Italy</option>
+        <option  >Germany</option>
+        <option   >Monaco</option>
+        <option  >Uk</option>
+        </select>
+    <img id="flag" src="no-image.png">
+    <script>
+        document.getElementById('flag').style.width = '200px';
+        document.getElementById('flag').style.height = '200px';
+        document.getElementById('flag').style.display = 'block';
+        //document.getElementById('flag').setAttribute('')
+
+
+        function changeimg(op) {
+            if (op == 'Jordan') {
+                document.getElementById('flag').src = "download.png";
+                document.getElementById('flag').setAttribute('alt', op);
+            } else if (op == 'Italy') {
+                document.getElementById('flag').src = "2560px-Flag_of_Italy.svg.png"
+            } else if (op == 'Germany') {
+                document.getElementById('flag').src = "download (3).png"
+            } else if (op == 'Monaco') {
+                document.getElementById('flag').src = "download (2).png"
+            } else if (op == 'Uk') {
+                document.getElementById('flag').src = "download (1).png"
+            }
+        }
+    </script>
+</body>
+
+</html>

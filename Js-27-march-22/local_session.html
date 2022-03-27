@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <title>Session+LocalStorage tasks</title>
+    <style>
+      .info {
+        color: rgb(248, 245, 245);
+        font-family:  'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      }
+      fieldset {
+        color: white;
+        font-family:  'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      }
+      .background {
+        background: url("WallpaperDog-10869203.jpg") rgba(82, 81, 81, 0.61);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-blend-mode: darken;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        filter: blur(3px);
+        min-height: 1000px;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 500px;
+        margin: 10vh auto;
+        background: transparent;
+        box-shadow: 0 0 15px rgb(255, 255, 255);
+        border-radius: 25px;
+      }
+      input[type="file"]::file-selector-button {
+        border: 2px solid #beb6f7;
+        padding: 0.2em 0.4em;
+        border-radius: 0.2em;
+        background-color: #ffffff;
+        transition: 1s;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      input[type="file"]::file-selector-button:hover {
+        background-color: #b0f0ef;
+        border: 2px solid #cfb5f1;
+      }
+
+      label {
+        font-weight: bold;
+      }
+      .btn {
+        border: 2px solid #beb6f7;
+        padding: 0.2em 0.4em;
+        margin-bottom: 1em;
+        border-radius: 0.2em;
+        width: 6em;
+        height: 3em;
+        background-color: #ffffff;
+        transition: 1s;
+      }
+      .btn:hover {
+        background-color: #b0f0ef;
+        border: 2px solid #cfb5f1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background"></div>
+    <div class="container">
+      <fieldset>
+        <legend><b>Personal Information Form</b></legend>
+
+        <form class="info">
+          <label>Full Name: </label><br />
+          <input type="text" id="fullname" /><br />
+          <label>Age: </label><br />
+          <input type="number" id="age" /><br /><br />
+          <label>Gender: </label>
+          <select id="gender">
+            <option>Selecet</option>
+            <option>Female</option>
+            <option>Male</option></select
+          ><br /><br />
+          <label>Major: </label><br />
+          <input type="text" id="Major" /><br /><br />
+          <label>University: </label><br />
+          <input type="text" id="Uni" /><br /><br />
+          <label>Date Of Birth: </label><br />
+          <input type="date" id="dob" /><br /><br />
+
+          <label>Favourite Programming Languages:</label>
+          <br />
+          <input type="checkbox" id="l1" name="l1" value="C++" />
+          <label for="l1"> c++</label><br />
+          <input type="checkbox" id="l2" name="l2" value="Python" />
+          <label for="l2"> Python</label><br />
+          <input type="checkbox" id="l3" name="l3" value="JS" />
+          <label for="l3"> JavaScript </label><br /><br />
+
+          <label>Upload A personal Image: </label><br />
+          <input type="file" id="img"  /><br /><br />
+
+          <input
+            onclick="myFunction()"
+            id="submitbtn"
+            class="btn bottom-center"
+            type="submit"
+            value="submit"
+          />
+        </form>
+      </fieldset>
+   
+
+
+    
+  </div>
+
+    <script>
+        // localStorage.clear();
+      function myFunction() {
+        let inputname = document.getElementById("fullname");
+        localStorage.setItem("fullN", inputname.value);
+
+        let age = document.getElementById("age");
+        localStorage.setItem("age", age.value);
+
+        let gender = document.getElementById("gender");
+        localStorage.setItem("gen", gender.value);
+
+        let Major = document.getElementById("Major");
+        localStorage.setItem("major", Major.value);
+
+        let Uni = document.getElementById("Uni");
+        localStorage.setItem("uni", Uni.value);
+
+        let dob = document.getElementById("dob");
+        localStorage.setItem("dob", dob.value);
+
+        let C = document.getElementById("l1");
+        localStorage.setItem("l1", C.value);
+
+        let py = document.getElementById("l2");
+        localStorage.setItem("l2", py.value);
+
+        let js = document.getElementById("l3");
+        localStorage.setItem("l3", js.value);
+
+        window.open("card.html");
+
+        
+
+
+
+
+      }
+     
+     document.querySelector("#img").addEventListener("change",function(){
+        const r= new FileReader();
+
+         r.addEventListener("load",()=>{
+            localStorage.setItem("img-url", r.value);
+         });
+         r.readAsDataURL(this.files[0]);
+          
+     })  
+          
+    
+    </script>
+  </body>
+</html>

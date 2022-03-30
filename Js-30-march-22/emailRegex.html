@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <form>
+
+      <input type="email" placeholder="@email" id="reg" />
+      <button onclick="myfun()" id="btn btn-secondary">Send</button>
+      
+    </form>
+    <script>
+   
+   
+   function validateEmail(elementValue){      
+   var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+   if( emailPattern.test(elementValue)){
+     alert("Correct email form!!");
+
+   } else{
+     alert("not the correct email form ")
+   }
+ } 
+    
+function myfun(){
+  let input=document.getElementById('reg').value;
+    validateEmail(input);}
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

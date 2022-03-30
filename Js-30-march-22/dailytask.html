@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <style>
+      label{
+          font-weight: bold;
+      }
+      .bg{
+          background-image: url("WallpaperDog-10869203.jpg");
+      }
+     .container{
+        background-color: rgba(223, 179, 186, 0.329);
+
+     }
+     .btn{
+         margin: 1em;
+    background-color: rgba(113, 119, 122, 0.623);
+    color: white;
+        
+     }
+      .btn:hover{
+        background-color: rgba(129, 172, 194, 0.788);
+    color: white;
+      }
+  </style>
+  <body>
+      <div class="bg"></div>
+  <div class="container">
+
+      <form id="form" class="form-group"  >
+          <label>First Name: </label><br />
+          <input type="text" id="fname" class="form-control" />
+          <small id="sm" class="form-text text-muted"> </small><br>
+          
+          <label>Last Name: </label><br />
+          <input type="text" id="lname" class="form-control"/><br />
+          
+          <label>Date Of Birth: </label><br />
+          <input type="date" id="dob" class="form-control"/><br />
+          
+          <label>Email: </label><br />
+          <input type="email" placeholder="Email" id="email" class="form-control"/><br />
+
+          <label>Confirm Email: </label><br />
+          <input type="email" placeholder="Confirm Email" id="cemail" class="form-control"/><br />
+
+          <label>Password: </label><br />
+          <input type="password" id="pw" placeholder="Password" class="form-control"/><br />
+
+          <label>Confirm Password: </label><br />
+          <input type="password" id="cpw" placeholder="Confirm Password" class="form-control"/><br />
+
+          <button id="btn" class="btn btn-light">Submit</button>
+        </form>
+    </div>    
+
+
+<script>
+
+
+function validateName(value){
+    let nameRegEx=/^[a-zA-Z]+$/g;
+    if(nameRegEx.test(value)){
+
+ 
+    }
+else{
+//document.getElementById('sm').innerText="Name is not okay!";
+
+alert('Name Should Only contain letters');}
+
+}
+function validateEmail(value){      
+   var emailPattern =/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+   if( emailPattern.test(value)){
+     
+
+   } else{
+    alert("not the correct email form ")
+   }
+ } 
+ function confirmEmail(value){      
+   let cemail=document.getElementById('cemail').value;
+   if( value.match(cemail)){
+     
+
+   } else{
+    alert("email doesn't match");
+   }
+ } 
+
+ function Validatepassword(pw) {
+          
+          let regExp =/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
+        
+          if (pw.match(regExp)) {
+            alert('password is good!!');
+             
+          }else{
+          alert('password is weak ');
+          }
+        }
+        function confirmPw(value){      
+   let cpw=document.getElementById('cpw').value;
+   if( value.match(cpw)){
+     
+
+   } else{
+    alert("password doesn't match");
+   }
+ } 
+document.getElementById('btn').addEventListener('click',function(){
+    let fn=document.getElementById('fname').value;
+    let ln=document.getElementById('lname').value;
+    let email=document.getElementById('email').value;
+    let cemail=document.getElementById('cemail').value;
+    let pw=document.getElementById('pw').value;
+
+
+
+
+
+    validateName(fn);
+    validateName(ln);
+    validateEmail(email)
+    confirmEmail(email);
+    Validatepassword(pw);
+    confirmPw(pw);
+
+
+
+});
+ 
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
